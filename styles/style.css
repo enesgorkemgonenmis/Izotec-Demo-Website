@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800');
+
 :root {
     --main-color: #d10b0e;
     --dark-blue: #303746;
@@ -9,7 +11,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-optical-sizing: auto;
     outline: none;
     border: none;
@@ -27,13 +29,14 @@ html {
 }
 
 html::-webkit-scrollbar {
-    width: 0.8rem;
-    background-color: #000;
+    width: 1rem;
+    border-radius: 3rem;
+    background-color: transparent;
 }
 
 html::-webkit-scrollbar-thumb {
     border-radius: 3rem;
-    background-color: #000;
+    background-color: #8f232d;
 }
 
 /*! layout wrappers (main split structure) */
@@ -70,8 +73,8 @@ html::-webkit-scrollbar-thumb {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 50rem;
     background-color: var(--dark-blue);
     opacity: 0.8;
     z-index: -99;
@@ -79,8 +82,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 .header .header-background {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 50rem;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -93,7 +96,7 @@ html::-webkit-scrollbar-thumb {
     width: 30rem;
     position: absolute;
     display: inline-block;
-    top: 2rem;
+    top: 4rem;
 }
 
 .header .logo .logo-img {
@@ -111,11 +114,11 @@ html::-webkit-scrollbar-thumb {
     height: auto;
 }
 
-/* Header Navigation Menu */
+/* header navigation menu */
 .header .nav-menu {
     position: absolute;
-    top: 5rem;
-    right: 30rem;
+    top: 6rem;
+    right: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,8 +128,12 @@ html::-webkit-scrollbar-thumb {
 .nav-link {
     position: relative;
     font-size: 2rem;
-    font-weight: 50;
+    font-weight: 100;
     color: #fff;
+}
+
+.nav-link:hover {
+    color: var(--main-color);
 }
 
 /*! main picture */
@@ -205,7 +212,7 @@ html::-webkit-scrollbar-thumb {
 
 .main-pictures .main-pictures-text-3 {
     bottom: 50%;
-    left: -24rem;
+    left: -26rem;
 }
 
 .main-pictures .main-pictures-text-4 {
@@ -220,17 +227,17 @@ html::-webkit-scrollbar-thumb {
     right: 0;
     width: 7%;
     height: 100vh;
-    background-color: var(--dark-blue);
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 5rem;
 }
 
 .header-button {
+    opacity: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,8 +247,12 @@ html::-webkit-scrollbar-thumb {
     width: 100%;
     height: 12rem;
     cursor: pointer;
-    margin-top: auto;
+    margin-top: 38rem;
     margin-bottom: auto;
+}
+
+.header-button:hover {
+    opacity: 0.7;
 }
 
 .header-button img {
@@ -258,18 +269,19 @@ html::-webkit-scrollbar-thumb {
 
 .sidebar-socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
     background-color: var(--main-color);
     width: 100%;
-    padding: 2rem 0;
+    padding: 3rem 0;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
 }
 
 .sidebar-socials a {
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
     transition: 0.2s;
 }
 
@@ -299,16 +311,19 @@ html::-webkit-scrollbar-thumb {
 }
 
 .content-info-left,
-.content-info-right,
-.content-desc-left,
-.content-desc-right {
+.content-info-right {
     z-index: 1;
 }
 
 .content-img-left img,
 .content-img-right img {
-    max-height: 60rem;
+    width: 70%;
+    max-height: 70rem;
     object-fit: cover;
+}
+
+.content-img-right img {
+    margin-top: 15rem;
 }
 
 .projects {
@@ -358,10 +373,13 @@ html::-webkit-scrollbar-thumb {
     text-transform: none;
 }
 
+.content-img-left p {
+    margin-top: 4rem;
+}
+
 .content-info-left p,
 .content-info-right p,
-.content-desc-left p,
-.content-desc-right p,
+.content-img-left p,
 .projects-info p {
     font-size: 2rem;
     font-weight: 300;
@@ -399,7 +417,7 @@ html::-webkit-scrollbar-thumb {
 /*! footer section */
 
 .footer {
-    width: 100%;
+    width: 100vw;
     background-color: #dfdfdf;
     margin-top: 5rem;
 }
@@ -418,13 +436,6 @@ html::-webkit-scrollbar-thumb {
     gap: 1rem;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
 .footer-logo-img {
     width: 30rem;
     height: auto;
@@ -439,36 +450,22 @@ html::-webkit-scrollbar-thumb {
     text-transform: none;
 }
 
-.footer-services {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.footer-services a {
-    font-size: 1.6rem;
-    font-weight: 300;
-    color: #626262;
-    text-transform: none;
-}
-
-.footer-services a:hover {
-    color: var(--main-color);
-}
-
+.footer-services,
 .footer-links {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
+.footer-services a,
 .footer-links a {
-    font-size: 1.63rem;
+    font-size: 1.6rem;
     font-weight: 300;
     color: #626262;
     text-transform: none;
 }
 
+.footer-services a:hover,
 .footer-links a:hover {
     color: var(--main-color);
 }
